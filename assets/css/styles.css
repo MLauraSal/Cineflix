@@ -10,7 +10,7 @@
   --body-bg: #020307;
   --box-bg: #221f1f;
   --text-color: #ffffff;
- 
+  --orange-color: #ff7e00;
   
   --light-gray: #d1d1d1;
   
@@ -45,6 +45,13 @@
    * variable for scaling overlay element on card hover 
    */
    --scale: 0.8;
+
+
+   --box-shadow-1: 0 0.5rem 1.5rem rgb(224, 39, 39);
+   
+   
+   --border: .2rem solid rgba(0, 0, 0, 0.1);
+   --outline: .1rem solid rgba(248, 243, 243, 0.1);
 }
 /*-----------------------------------*\
   #RESET
@@ -151,7 +158,7 @@ box-icon {
 }
 .movies,
 .category,
-.live {
+.live, .review {
   padding: 0 var(--px);
 }
 
@@ -567,7 +574,10 @@ box-icon {
   #LIVE SECTION
 \*-------------------------------------*/
 
-.live { margin-bottom: 60px; }
+.live { 
+  margin-bottom: 60px; 
+  
+}
 
 .live-grid {
   display: grid;
@@ -657,7 +667,66 @@ box-icon {
 
 
 
+/*-----------------------------------*\
+  #SECTION REVIEW
+\*-----------------------------------*/
 
+
+
+.review .review-grid {
+  border: 0px solid;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 5rem;
+  margin-bottom: 60px; 
+ 
+}
+
+.review .review-grid .review-box {
+  height: auto;
+  border: 0px solid;
+  background: var(--bg-color);
+  border-radius: .5rem;
+  text-align: center;
+  padding: 3rem 2rem;
+  outline-offset: -1rem;
+  outline: var(--outline);
+  box-shadow: var(--box-shadow-1);
+  transition: .2s linear;
+  margin-bottom: 1rem;
+}
+
+.review .review-grid .review-box:hover {
+  box-shadow: 1px 1px 10px 4px var(--light-gray);
+}
+
+.review .review-grid .review-box img {
+
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.review .review-grid .review-box p {
+
+  padding: 1rem 0;
+  line-height: 1.8;
+  font-size: 0.8rem;
+  color: var(--comment-date);
+}
+
+.review .review-grid .review-box h3 {
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+
+.review .review-grid .review-box .stars i {
+  
+  color: var(--orange-color);
+  font-size: 1.2rem;
+}
 
 /*-------------------------------------*\
   #FOOTER SECTION
@@ -733,3 +802,6 @@ ul .link-item:not(:last-child) { margin-bottom: 10px; }
 .wrapper { display: flex; }
 
 .wrapper a:not(:last-child) { margin-right: 30px; }
+
+
+
